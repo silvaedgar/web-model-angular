@@ -1,0 +1,21 @@
+<mat-card class="example-card mat-elevation-z8 mx-auto cardHeader">
+  <div class="row">
+    <div class="col-sm-6">
+      <mat-card-title style> {{ header.title }} </mat-card-title>
+    </div>
+    <div class="col-sm-2" *ngFor="let item of header.buttons; let index = index">
+      <button mat-raised-button (click)="returnEmit(item.emit)">
+        {{ item.label }}
+      </button>
+    </div>
+    <!-- <em class="fa fa-user-plus"> {{ headerContains.subTitle1 }} </em>  para poner el icono en ek boton-->
+  </div>
+  <div class="row" *ngIf="existsLinks">
+    <div *ngFor="let link of header.links; let index = index">
+      <a (click)="returnEmit(link.href)"> {{ link.label}} </a>
+    </div>
+  </div>
+  <div class="row bg-danger mt-2" *ngIf="header.message!= ''">
+    <span class="error"> {{ header.message }} </span>
+  </div>
+</mat-card>

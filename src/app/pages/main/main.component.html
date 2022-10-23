@@ -1,0 +1,4 @@
+<app-navigation *ngIf="isLogged"></app-navigation>
+
+<app-navbar-start *ngIf="!isLogged"></app-navbar-start>
+<router-outlet></router-outlet>
